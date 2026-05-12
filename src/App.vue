@@ -1,11 +1,15 @@
-<script setup></script>
+<script setup>
+import Profile from './components/ProfileHeader.vue';
+import JourneyTracker from './components/JourneyTracker.vue';
+import AcademicProgress from './components/AcademicProgress.vue';
+import ResearchProjects from './components/ResearchProjects.vue';
+import StudentProfileView from './views/StudentProfileView.vue';
+
+</script>
 
 <template>
-  <h1 class="text-red-600">You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+
+<StudentProfileView />
 </template>
 
 <style scoped></style>
