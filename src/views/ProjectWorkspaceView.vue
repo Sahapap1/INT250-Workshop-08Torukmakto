@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-[1280px] mx-auto px-margin-desktop py-12">
+  <div class="max-w-[1280px] mx-auto px-4 md:px-margin-desktop py-12 transition-colors duration-300">
     <!-- Page Header -->
     <div class="mb-12">
       <h1 class="font-display-lg text-display-lg text-primary mb-4">Project Workspace &amp; Monitoring Tool</h1>
@@ -7,7 +7,7 @@
     </div>
     
     <!-- Dashboard Summary Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-gutter mb-16">
       <div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant hover:border-primary transition-colors">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
@@ -215,15 +215,15 @@
         <div class="w-1.5 h-8 bg-primary rounded-full"></div>
         <h2 class="font-headline-lg text-headline-lg text-primary">Faculty Research Snapshots</h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-        <div class="md:col-span-7 bg-primary text-on-primary rounded-2xl p-10 flex flex-col justify-between overflow-hidden relative group min-h-[450px]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-gutter">
+        <div class="lg:col-span-7 bg-primary text-on-primary rounded-2xl p-6 md:p-10 flex flex-col justify-between overflow-hidden relative group min-h-[450px]">
           <div class="relative z-10">
             <div class="w-16 h-16 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-8 border border-white/20">
               <span class="material-symbols-outlined text-4xl">biotech</span>
             </div>
             <h3 class="font-display-lg text-display-lg mb-6 leading-tight">Bio-Medical Clarity Lab</h3>
             <p class="text-body-lg text-on-primary/80 max-w-lg mb-10 leading-relaxed">Our flagship monitoring hub for high-stakes medical research, featuring real-time telemetry from student-led clinical trials across Europe.</p>
-            <div class="flex gap-6">
+            <div class="flex flex-col sm:flex-row gap-6">
               <div class="bg-white/10 backdrop-blur-lg p-5 rounded-xl flex-1 border border-white/20">
                 <div class="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60 mb-1">Active Clinical Trials</div>
                 <div class="text-3xl font-bold flex items-baseline gap-1">12 <span class="text-xs font-normal opacity-40">Running</span></div>
@@ -238,7 +238,7 @@
           <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-[100px] group-hover:scale-110 transition-transform duration-1000"></div>
         </div>
         
-        <div class="md:col-span-5 flex flex-col gap-gutter">
+        <div class="lg:col-span-5 flex flex-col gap-6 md:gap-gutter mt-8 lg:mt-0">
           <div class="flex-1 bg-surface-container-high rounded-2xl overflow-hidden group border border-outline-variant hover:border-primary transition-all">
             <div class="h-1/2 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDJecCYDjr094h4y-0UZ19clQY8kPP5luB1jETrzd9flM0UKI5nX1c0GLbgIMwbKplAQfx-FzGamV5jsxICXizvdh33ij79trgNDP6elQtI0vUiz3aDlXoE3N89Uniw0gj4sn2WwpL0P91nuXl0NNqcY2BWJbkMhds4cgIpticsmYnNXp1XBOYZCzxq7kgbG2VxitjkEVyhqbEtFCkDgZj6OKhWx7INGouioQlNTOwV7Km6vb1Tap5gEJWMf6GDpybyAsszuTE1xQ')"></div>
             <div class="p-8 flex flex-col h-1/2 justify-center">
