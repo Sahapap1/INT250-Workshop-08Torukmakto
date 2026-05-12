@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import MainLayout from "@/layouts/MainLayout.vue";
 import HomeView from "@/views/HomeView.vue";
 import AdmissionsView from "@/views/AdmissionsView.vue";
-import ProjectView from "@/views/ProjectView.vue";
+import ProjectWorkspaceView from "@/views/ProjectWorkspaceView.vue";
 
 const routes = [
   {
@@ -21,7 +21,7 @@ const routes = [
       },
       {
         path: "projects",
-        component: ProjectView
+        component: ProjectWorkspaceView
       }
     ],
   },
