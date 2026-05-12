@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import MainLayout from "@/layouts/MainLayout.vue";
 import HomeView from "@/views/HomeView.vue";
 import AdmissionsView from "@/views/AdmissionsView.vue";
+import ProjectView from "@/views/ProjectView.vue";
 
 const routes = [
   {
@@ -17,6 +18,10 @@ const routes = [
       {
         path: "admissions",
         component: AdmissionsView
+      },
+      {
+        path: "projects",
+        component: ProjectView
       }
     ],
   },
