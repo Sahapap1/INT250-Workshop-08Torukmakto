@@ -18,5 +18,5 @@ import BookingModal from "@/components/campus/BookingModal.vue";
 
   <ReservationsTable />
 
-  <!-- <BookingModal /> -->
+  <BookingModal />
 </template>
