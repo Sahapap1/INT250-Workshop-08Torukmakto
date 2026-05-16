@@ -19,7 +19,7 @@
           <input
             v-model="form.username"
             type="text"
-            placeholder="University ID or Email"
+            placeholder="University ID"
             class="w-full pl-8 pr-4 py-3 border-b border-outline-variant bg-transparent focus:border-primary focus:ring-0 transition-all font-body-md placeholder:text-outline"
           />
         </div>
