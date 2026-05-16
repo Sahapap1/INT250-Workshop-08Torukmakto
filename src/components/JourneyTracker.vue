@@ -9,15 +9,15 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200">
-    <h2 class="text-2xl font-semibold text-[#071A3B] mb-8 flex items-center gap-2">
+  <div class="bg-surface-container-low rounded-xl p-6 md:p-8 border border-outline-variant transition-colors duration-300">
+    <h2 class="text-2xl font-semibold text-primary mb-8 flex items-center gap-2">
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
         fill="none" 
         viewBox="0 0 24 24" 
         stroke-width="1.5" 
-        stroke="#071A3B"
-        class="w-6 h-6"
+        stroke="currentColor"
+        class="w-6 h-6 text-primary"
         >
         <path 
             stroke-linecap="round" 
@@ -42,10 +42,10 @@ defineProps({
     <div class="w-full overflow-x-auto pb-4">
       <div class="relative flex items-start justify-between min-w-[500px]">
       <!-- Track base line -->
-      <div class="absolute h-1 bg-gray-200 w-full top-5 -translate-y-1/2 z-0"></div>
+      <div class="absolute h-1 bg-surface-container-highest w-full top-5 -translate-y-1/2 z-0"></div>
       <!-- Track progress line (up to active step) -->
       <div
-        class="absolute h-1 bg-[#071A3B] top-5 -translate-y-1/2 z-0"
+        class="absolute h-1 bg-primary top-5 -translate-y-1/2 z-0"
         :style="{ width: progressWidth }"
       ></div>
 
@@ -58,14 +58,14 @@ defineProps({
         <!-- Done -->
         <div
           v-if="step.status === 'done'"
-          class="w-10 h-10 rounded-full bg-[#071A3B] flex items-center justify-center text-white"
+          class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary"
         >
           <svg 
         xmlns="http://www.w3.org/2000/svg" 
         fill="none" 
         viewBox="0 0 24 24" 
         stroke-width="2" 
-        stroke="white"
+        stroke="currentColor"
         class="w-4 h-4"
     >
         <path 
@@ -79,13 +79,13 @@ defineProps({
         <!-- Active -->
         <div
           v-else-if="step.status === 'active'"
-          class="w-12 h-12 rounded-full border-4 border-white bg-[#071A3B] flex items-center justify-center text-white shadow-lg"
+          class="w-12 h-12 rounded-full border-4 border-surface bg-primary flex items-center justify-center text-on-primary shadow-lg"
         >
           <svg 
           xmlns="http://www.w3.org/2000/svg" 
           fill="currentColor" 
           viewBox="0 0 24 24"
-          class="w-6 h-6 text-white"
+          class="w-6 h-6"
           >
           <path d="M8 5v14l11-7z" />
           </svg>
@@ -94,7 +94,7 @@ defineProps({
         <!-- Pending -->
         <div
           v-else
-          class="w-10 h-10 rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center text-gray-400"
+          class="w-10 h-10 rounded-full bg-surface-container border-2 border-outline-variant flex items-center justify-center text-on-surface-variant"
         >
           <span class="text-base" v-html="step.icon"></span>
         </div>
@@ -102,13 +102,13 @@ defineProps({
         <div class="text-center">
           <p
             class="text-xs font-semibold"
-            :class="step.status !== 'pending' ? 'text-[#071A3B]' : 'text-gray-600'"
+            :class="step.status !== 'pending' ? 'text-primary' : 'text-on-surface-variant'"
           >
             {{ step.label }}
           </p>
           <p
             class="text-[11px]"
-            :class="step.status === 'active' ? 'text-[#071A3B]' : 'text-gray-400'"
+            :class="step.status === 'active' ? 'text-primary' : 'text-outline'"
           >
             {{ step.sub }}
           </p>
