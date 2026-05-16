@@ -2,9 +2,7 @@
 
 </script>
 <template>
-<ProfileHeader />
-
+  
 </template>
-<style scoped>
 
-</style>
+<style scoped></style>
