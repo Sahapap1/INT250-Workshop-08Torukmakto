@@ -27,22 +27,22 @@
                 <div>
                     <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Full Name
                     </p>
-                    <p class="font-body-md font-semibold">Julian Van Der Berg</p>
+                    <p class="font-body-md font-bold">Julian Van Der Berg</p>
                 </div>
                 <div>
                     <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Date of
                         Birth</p>
-                    <p class="font-body-md font-semibold">14 May 2005</p>
+                    <p class="font-body-md font-bold">14 May 2005</p>
                 </div>
                 <div>
                     <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Nationality
                     </p>
-                    <p class="font-body-md font-semibold">Netherlands</p>
+                    <p class="font-body-md font-bold">Netherlands</p>
                 </div>
                 <div>
                     <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Contact
                         Email</p>
-                    <p class="font-body-md font-semibold">j.vanderberg@example.nl</p>
+                    <p class="font-body-md font-bold">j.vanderberg@example.nl</p>
                 </div>
             </div>
         </section>
@@ -74,7 +74,7 @@
                     <div>
                         <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Intended
                             Major</p>
-                        <p class="font-body-md font-semibold text-primary font-bold">BSc. Artificial Intelligence &amp;
+                        <p class="font-body-md font-bold text-primary">BSc. Artificial Intelligence &amp;
                             Society</p>
                     </div>
                 </div>
@@ -166,10 +166,11 @@
     </div>
     <!-- Sticky Action Bar (Internal) -->
     <div>
-        class="mt-12 py-8 flex flex-col md:flex-row gap-4 items-center justify-between border-t border-outline-variant">
-        <button
-            class="w-full md:w-auto px-8 py-3 font-label-md text-primary border border-primary rounded-lg hover:bg-surface-container transition-colors">
-            Save Draft
-        </button>
+        <div class="mt-12 py-8 flex flex-col md:flex-row gap-4 items-center justify-between border-t border-outline-variant">
+            <button
+                class="w-full md:w-auto px-8 py-3 font-label-md text-primary border border-primary rounded-lg hover:bg-surface-container transition-colors">
+                Save Draft
+            </button>
+        </div>
     </div>
 </template>
