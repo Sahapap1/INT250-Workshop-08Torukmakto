@@ -11,19 +11,19 @@
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">First Name</label>
             <input
-              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="e.g., Julian" type="text" />
           </div>
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Middle Name (Optional)</label>
             <input
-              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="e.g., Alexander" type="text" />
           </div>
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Last Name</label>
             <input
-              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="e.g., Van den Berg" type="text" />
           </div>
         </div>
@@ -34,13 +34,13 @@
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Date of Birth</label>
           <input
-            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
             type="date" />
         </div>
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Gender</label>
           <select
-            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-white">
+            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-white text-black">
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
@@ -48,7 +48,7 @@
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Nationality</label>
           <input
-            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
             placeholder="e.g., Dutch" type="text" />
         </div>
       </section>
@@ -65,20 +65,20 @@
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Email Address</label>
             <input
-              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="julian@example.com" type="email" />
           </div>
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Phone Number</label>
             <input
-              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="+31 6 12345678" type="tel" />
           </div>
         </div>
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Permanent Home Address</label>
           <textarea
-            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary px-4 py-3 bg-gray-200"
+            class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary px-4 py-3 bg-gray-200 text-black"
             placeholder="Street Address, City, Postal Code, Country" rows="3"></textarea>
         </div>
       </section>
@@ -95,7 +95,7 @@
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Passport or National ID Number</label>
             <input
-              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200"
+              class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="Enter ID number" type="text" />
           </div>
           <div class="flex flex-col gap-2">
