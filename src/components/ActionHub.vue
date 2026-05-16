@@ -7,7 +7,7 @@
             <span class="material-symbols-outlined text-white text-3xl">school</span>
           </div>
           <div>
-            <h4 class="font-headline-md text-headline-md mb-2 text-primary-container">Student Portal</h4>
+            <h4 class="font-headline-md text-headline-md mb-2 text-on-primary">Student Portal</h4>
             <p class="font-body-md opacity-80 mb-4 text-on-primary-container">Access course materials, grades, and administrative services in one unified platform.</p>
             <RouterLink to="/student-profile" class="font-label-md flex items-center gap-2 text-secondary-fixed">
               Open Portal <span class="material-symbols-outlined">login</span>
@@ -19,7 +19,7 @@
             <span class="material-symbols-outlined text-white text-3xl">assignment_ind</span>
           </div>
           <div>
-            <h4 class="font-headline-md text-headline-md mb-2 text-primary-container">Admissions Office</h4>
+            <h4 class="font-headline-md text-headline-md mb-2 text-on-primary">Admissions Office</h4>
             <p class="font-body-md opacity-80 mb-4 text-on-primary-container">Ready to start your journey? Get guidance on applications, scholarships, and campus life.</p>
             <a class="font-label-md flex items-center gap-2 text-secondary-fixed" href="#">
               Contact Admissions <span class="material-symbols-outlined">mail</span>

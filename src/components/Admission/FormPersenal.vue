@@ -10,19 +10,19 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">First Name</label>
-            <input
+            <input v-model="store.personal.firstName"
               class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="e.g., Julian" type="text" />
           </div>
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Middle Name (Optional)</label>
-            <input
+            <input v-model="store.personal.middleName"
               class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="e.g., Alexander" type="text" />
           </div>
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Last Name</label>
-            <input
+            <input v-model="store.personal.lastName"
               class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="e.g., Van den Berg" type="text" />
           </div>
@@ -33,13 +33,13 @@
       <section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Date of Birth</label>
-          <input
+          <input v-model="store.personal.dateOfBirth"
             class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
             type="date" />
         </div>
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Gender</label>
-          <select
+          <select v-model="store.personal.gender"
             class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-white text-black">
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -47,7 +47,7 @@
         </div>
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Nationality</label>
-          <input
+          <input v-model="store.personal.nationality"
             class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
             placeholder="e.g., Dutch" type="text" />
         </div>
@@ -64,20 +64,20 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-6">
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Email Address</label>
-            <input
+            <input v-model="store.personal.email"
               class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="julian@example.com" type="email" />
           </div>
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Phone Number</label>
-            <input
+            <input v-model="store.personal.phone"
               class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="+31 6 12345678" type="tel" />
           </div>
         </div>
         <div class="flex flex-col gap-2">
           <label class="font-label-md text-on-surface-variant">Permanent Home Address</label>
-          <textarea
+          <textarea v-model="store.personal.address"
             class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary px-4 py-3 bg-gray-200 text-black"
             placeholder="Street Address, City, Postal Code, Country" rows="3"></textarea>
         </div>
@@ -94,7 +94,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
           <div class="flex flex-col gap-2">
             <label class="font-label-md text-on-surface-variant">Passport or National ID Number</label>
-            <input
+            <input v-model="store.personal.idNumber"
               class="w-full rounded-lg border-outline-variant focus:border-primary focus:ring-primary h-12 px-4 bg-gray-200 text-black"
               placeholder="Enter ID number" type="text" />
           </div>
@@ -115,3 +115,7 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { admissionStore as store } from '@/stores/admissionStore';
+</script>

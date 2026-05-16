@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { authStore } from "@/stores/appStore";
 
 import MainLayout from "@/layouts/MainLayout.vue";
 import AuthLayout from "@/layouts/AuthLayout.vue";
@@ -27,15 +28,18 @@ const routes = [
       },
       {
         path: "projects",
-        component: ProjectWorkspaceView
+        component: ProjectWorkspaceView,
+        meta: { requiresAuth: true }
       },
       {
         path: "campus-services",
-        component: CampusServicesView
+        component: CampusServicesView,
+        meta: { requiresAuth: true }
       },
       {
         path: "student-profile",
-        component: StudentProfileView
+        component: StudentProfileView,
+        meta: { requiresAuth: true }
       }
     ],
   },
@@ -56,6 +60,15 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+});
+
+// Navigation guard: redirect to login if not authenticated
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth && !authStore.isAuthenticated()) {
+    next("/login");
+  } else {
+    next();
+  }
 });
 
 export default router;

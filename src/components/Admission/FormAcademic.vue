@@ -1,4 +1,6 @@
 <script setup>
+import { admissionStore as store } from '@/stores/admissionStore';
+
 // 1. รับค่า Props และกำหนด Emits เพื่อเชื่อม v-model กับหน้าหลัก (AdmissionView)
 const props = defineProps({
     status: {
@@ -71,7 +73,7 @@ const selectStatus = (newStatus) => {
         <div class="grid grid-cols-1 gap-6">
             <div class="space-y-2">
                 <label class="font-label-md text-label-md text-on-surface-variant">Institution Name</label>
-                <input
+                <input v-model="store.academic.institutionName"
                     class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary-container focus:border-primary transition-all font-body-md"
                     placeholder="e.g. Amsterdam International High School" type="text" />
             </div>
@@ -79,14 +81,14 @@ const selectStatus = (newStatus) => {
             <div v-if="props.status === 'standard'" class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in">
                 <div class="space-y-2">
                     <label class="font-label-md text-label-md text-on-surface-variant">BSN Number</label>
-                    <input
+                    <input v-model="store.academic.bsnNumber"
                         class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary-container focus:border-primary transition-all font-body-md"
                         placeholder="123 456 789" type="text" />
                     <span class="text-[12px] italic text-on-surface-variant">Dutch Burgerservicenummer</span>
                 </div>
                 <div class="space-y-2">
                     <label class="font-label-md text-label-md text-on-surface-variant">VWO Profile Selection</label>
-                    <select
+                    <select v-model="store.academic.vwoProfile"
                         class="w-full bg-surface-container-low border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary-container focus:border-primary transition-all font-body-md appearance-none">
                         <option>Nature &amp; Health</option>
                         <option>Nature &amp; Technology</option>
@@ -106,12 +108,12 @@ const selectStatus = (newStatus) => {
                         <label class="font-label-md text-label-md text-on-surface-variant block">Current Status</label>
                         <div class="flex flex-wrap items-center gap-4 md:gap-6">
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input class="w-5 h-5 text-primary border-outline focus:ring-primary-fixed"
+                                <input v-model="store.academic.hboStatus" value="Propedeuse" class="w-5 h-5 text-primary border-outline focus:ring-primary-fixed"
                                     name="hbo-status" type="radio" />
                                 <span class="font-body-md text-on-surface group-hover:text-primary">Propedeuse</span>
                             </label>
                             <label class="flex items-center gap-2 cursor-pointer group">
-                                <input class="w-5 h-5 text-primary border-outline focus:ring-primary-fixed"
+                                <input v-model="store.academic.hboStatus" value="Full Diploma" class="w-5 h-5 text-primary border-outline focus:ring-primary-fixed"
                                     name="hbo-status" type="radio" />
                                 <span class="font-body-md text-on-surface group-hover:text-primary">Full Diploma</span>
                             </label>
@@ -119,14 +121,14 @@ const selectStatus = (newStatus) => {
                     </div>
                     <div class="space-y-2">
                         <label class="font-label-md text-label-md text-on-surface-variant">Current GPA</label>
-                        <input
+                        <input v-model="store.academic.gpa"
                             class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary-container focus:border-primary transition-all font-body-md"
                             placeholder="8.5" type="text" />
                     </div>
                 </div>
                 <div class="space-y-2">
                     <label class="font-label-md text-label-md text-on-surface-variant">Detailed Examination of Studies</label>
-                    <textarea
+                    <textarea v-model="store.academic.coursework"
                         class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary-container focus:border-primary transition-all font-body-md"
                         placeholder="Please list specific relevant coursework or major subjects..." rows="4"></textarea>
                 </div>
@@ -140,7 +142,7 @@ const selectStatus = (newStatus) => {
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
                         <label class="font-label-md text-label-md text-on-surface-variant">Country of Origin</label>
-                        <select
+                        <select v-model="store.academic.countryOfOrigin"
                             class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary-container focus:border-primary transition-all font-body-md appearance-none">
                             <option>United Kingdom</option>
                             <option>United States</option>
@@ -151,7 +153,7 @@ const selectStatus = (newStatus) => {
                     </div>
                     <div class="space-y-2">
                         <label class="font-label-md text-label-md text-on-surface-variant">English Proficiency (IELTS/TOEFL)</label>
-                        <input
+                        <input v-model="store.academic.englishProficiency"
                             class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg p-4 focus:ring-2 focus:ring-primary-container focus:border-primary transition-all font-body-md"
                             placeholder="e.g. IELTS 7.5" type="text" />
                     </div>
