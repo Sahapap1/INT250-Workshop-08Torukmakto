@@ -9,10 +9,8 @@
           <div>
             <h4 class="font-headline-md text-headline-md mb-2 text-primary-container">Student Portal</h4>
             <p class="font-body-md opacity-80 mb-4 text-on-primary-container">Access course materials, grades, and administrative services in one unified platform.</p>
-            <a class="font-label-md flex items-center gap-2 text-secondary-fixed" href="#">
             <RouterLink to="/student-profile" class="font-label-md flex items-center gap-2 text-secondary-fixed">
               Open Portal <span class="material-symbols-outlined">login</span>
-            </a>
             </RouterLink>
           </div>
         </div>
