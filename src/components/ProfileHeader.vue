@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row gap-8 items-center md:items-start">
+  <div class="bg-white rounded-xl p-6 md:p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start">
 
     <!-- Avatar -->
     <div class="relative shrink-0">

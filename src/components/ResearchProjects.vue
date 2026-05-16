@@ -11,7 +11,7 @@ const emit = defineEmits(['add'])
 </script>
 
 <template>
-  <div class="bg-gray-100 rounded-xl p-8 border-t-4 border-teal-500 shadow-sm">
+  <div class="bg-gray-100 rounded-xl p-6 md:p-8 border-t-4 border-teal-500 shadow-sm">
     <h2 class="text-2xl font-semibold text-[#071A3B] mb-6">Research Projects</h2>
     <div class="space-y-6">
 

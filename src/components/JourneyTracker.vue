@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+  <div class="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-200">
     <h2 class="text-2xl font-semibold text-[#071A3B] mb-8 flex items-center gap-2">
       <svg 
         xmlns="http://www.w3.org/2000/svg" 
@@ -39,7 +39,8 @@ defineProps({
       Academic Journey Tracker
     </h2>
 
-    <div class="relative flex items-start justify-between w-full">
+    <div class="w-full overflow-x-auto pb-4">
+      <div class="relative flex items-start justify-between min-w-[500px]">
       <!-- Track base line -->
       <div class="absolute h-1 bg-gray-200 w-full top-5 -translate-y-1/2 z-0"></div>
       <!-- Track progress line (up to active step) -->
@@ -114,6 +115,7 @@ defineProps({
         </div>
       </div>
 
+      </div>
     </div>
   </div>
 </template>

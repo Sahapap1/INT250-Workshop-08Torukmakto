@@ -13,8 +13,8 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
-    <div class="flex justify-between items-center mb-8">
+  <div class="bg-white border border-gray-200 rounded-xl p-6 md:p-8 shadow-sm">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
       <div>
         <h2 class="text-2xl font-semibold text-[#071A3B]">Academic Progress</h2>
         <p class="text-sm text-gray-400">Real-time performance across current modules.</p>
