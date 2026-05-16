@@ -1,4 +1,29 @@
-<script setup></script>
+<script setup>
+import { computed } from 'vue';
+import { admissionStore as store } from '@/stores/admissionStore';
+
+const emit = defineEmits(['goToStep']);
+
+// Computed helpers for display
+const fullName = computed(() => {
+    const parts = [store.personal.firstName, store.personal.middleName, store.personal.lastName].filter(Boolean);
+    return parts.length > 0 ? parts.join(' ') : '—';
+});
+
+const formattedDob = computed(() => {
+    if (!store.personal.dateOfBirth) return '—';
+    const d = new Date(store.personal.dateOfBirth);
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+});
+
+const docList = computed(() => [
+    { key: 'transcript', label: 'Transcript', desc: 'VWO Secondary Diploma', icon: 'picture_as_pdf', iconColor: 'text-error', uploaded: store.documents.transcript },
+    { key: 'degreeCertificate', label: 'Degree Certificate', desc: 'Identification Document', icon: 'school', iconColor: 'text-secondary', uploaded: store.documents.degreeCertificate },
+    { key: 'statementOfPurpose', label: 'Statement of Purpose', desc: 'Personal Statement', icon: 'description', iconColor: 'text-primary-container', uploaded: store.documents.statementOfPurpose },
+    { key: 'resume', label: 'Resume / CV', desc: 'Professional History', icon: 'badge', iconColor: 'text-primary', uploaded: store.documents.resume },
+    { key: 'standardizedTests', label: 'Standardized Tests', desc: 'SAT/ACT/GRE (Optional)', icon: 'quiz', iconColor: 'text-tertiary-fixed-dim', uploaded: store.documents.standardizedTests },
+]);
+</script>
 
 <template>
     <header class="mb-12">
@@ -19,30 +44,26 @@
                     <span class="material-symbols-outlined text-primary" data-icon="person">person</span>
                     <h3 class="font-headline-md text-headline-md">Personal Information</h3>
                 </div>
-                <button class="flex items-center gap-1 text-primary font-label-md hover:underline">
+                <button @click="emit('goToStep', 1)" class="flex items-center gap-1 text-primary font-label-md hover:underline">
                     <span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit
                 </button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
                 <div>
-                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Full Name
-                    </p>
-                    <p class="font-body-md font-bold">Julian Van Der Berg</p>
+                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Full Name</p>
+                    <p class="font-body-md font-bold">{{ fullName }}</p>
                 </div>
                 <div>
-                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Date of
-                        Birth</p>
-                    <p class="font-body-md font-bold">14 May 2005</p>
+                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Date of Birth</p>
+                    <p class="font-body-md font-bold">{{ formattedDob }}</p>
                 </div>
                 <div>
-                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Nationality
-                    </p>
-                    <p class="font-body-md font-bold">Netherlands</p>
+                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Nationality</p>
+                    <p class="font-body-md font-bold">{{ store.personal.nationality || '—' }}</p>
                 </div>
                 <div>
-                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Contact
-                        Email</p>
-                    <p class="font-body-md font-bold">j.vanderberg@example.nl</p>
+                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Contact Email</p>
+                    <p class="font-body-md font-bold">{{ store.personal.email || '—' }}</p>
                 </div>
             </div>
         </section>
@@ -55,27 +76,23 @@
                     <span class="material-symbols-outlined text-primary" data-icon="school">school</span>
                     <h3 class="font-headline-md text-headline-md">Academic Background</h3>
                 </div>
-                <button class="flex items-center gap-1 text-primary font-label-md hover:underline">
+                <button @click="emit('goToStep', 2)" class="flex items-center gap-1 text-primary font-label-md hover:underline">
                     <span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit
                 </button>
             </div>
             <div class="space-y-6">
                 <div>
-                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Last
-                        Institution</p>
-                    <p class="font-body-md font-semibold">St. Bavo Gymnasium, Haarlem</p>
+                    <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Last Institution</p>
+                    <p class="font-body-md font-semibold">{{ store.academic.institutionName || '—' }}</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
                     <div>
-                        <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">VWO
-                            Profile</p>
-                        <p class="font-body-md font-semibold">Natuur en Techniek (N&amp;T)</p>
+                        <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">VWO Profile</p>
+                        <p class="font-body-md font-semibold">{{ store.academic.vwoProfile || '—' }}</p>
                     </div>
                     <div>
-                        <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">Intended
-                            Major</p>
-                        <p class="font-body-md font-bold text-primary">BSc. Artificial Intelligence &amp;
-                            Society</p>
+                        <p class="text-on-surface-variant text-[12px] uppercase font-bold tracking-widest mb-1">BSN Number</p>
+                        <p class="font-body-md font-bold text-primary">{{ store.academic.bsnNumber || '—' }}</p>
                     </div>
                 </div>
             </div>
@@ -89,61 +106,24 @@
                     <span class="material-symbols-outlined text-primary" data-icon="description">description</span>
                     <h3 class="font-headline-md text-headline-md">Document Submission</h3>
                 </div>
-                <button class="flex items-center gap-1 text-primary font-label-md hover:underline">
+                <button @click="emit('goToStep', 3)" class="flex items-center gap-1 text-primary font-label-md hover:underline">
                     <span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span> Edit
                 </button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div
-                    class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+                <div v-for="doc in docList" :key="doc.key"
+                    class="flex items-center justify-between p-4 bg-white rounded-lg border shadow-sm hover:shadow-md transition-shadow"
+                    :class="doc.uploaded ? 'border-green-300' : 'border-outline-variant'">
                     <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-error"
-                            data-icon="picture_as_pdf">picture_as_pdf</span>
+                        <span class="material-symbols-outlined" :class="doc.iconColor">{{ doc.icon }}</span>
                         <div>
-                            <p class="font-body-md font-semibold text-[14px]">Final_Transcript_2024.pdf</p>
-                            <p class="text-[12px] text-on-surface-variant">VWO Secondary Diploma</p>
+                            <p class="font-body-md font-semibold text-[14px]">{{ doc.label }}</p>
+                            <p class="text-[12px] text-on-surface-variant">{{ doc.desc }}</p>
                         </div>
                     </div>
-                    <span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle"
+                    <span v-if="doc.uploaded" class="material-symbols-outlined text-green-600"
                         style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                </div>
-                <div
-                    class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-secondary" data-icon="badge">badge</span>
-                        <div>
-                            <p class="font-body-md font-semibold text-[14px]">Passport_Copy_Julian.jpg</p>
-                            <p class="text-[12px] text-on-surface-variant">Identification Document</p>
-                        </div>
-                    </div>
-                    <span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle"
-                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                </div>
-                <div
-                    class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary-container"
-                            data-icon="history_edu">history_edu</span>
-                        <div>
-                            <p class="font-body-md font-semibold text-[14px]">Motivation_Letter_Final.docx</p>
-                            <p class="text-[12px] text-on-surface-variant">Personal Statement</p>
-                        </div>
-                    </div>
-                    <span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle"
-                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                </div>
-                <div
-                    class="flex items-center justify-between p-4 bg-white rounded-lg border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
-                    <div class="flex items-center gap-3">
-                        <span class="material-symbols-outlined text-tertiary-fixed-dim"
-                            data-icon="language">language</span>
-                        <div>
-                            <p class="font-body-md font-semibold text-[14px]">IELTS_Test_Results.pdf</p>
-                            <p class="text-[12px] text-on-surface-variant">English Proficiency</p>
-                        </div>
-                    </div>
-                    <span class="material-symbols-outlined text-on-primary-container" data-icon="check_circle"
-                        style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                    <span v-else class="material-symbols-outlined text-outline">cancel</span>
                 </div>
             </div>
         </section>

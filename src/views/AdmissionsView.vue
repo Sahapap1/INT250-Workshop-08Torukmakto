@@ -43,6 +43,12 @@ const prevStep = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 };
+
+// ฟังก์ชันสำหรับกระโดดไป Step ที่ต้องการ (จากปุ่ม Edit ใน FormReview)
+const goToStep = (step) => {
+    currentStep.value = step;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 </script>
 
 <template>
@@ -86,7 +92,7 @@ const prevStep = () => {
                     <FormDocuments_Inter v-else-if="applicantStatus === 'international'" />
                 </template>
 
-                <FormReview v-else-if="currentStep === 4" />
+                <FormReview v-else-if="currentStep === 4" @goToStep="goToStep" />
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-outline-variant mt-10">
