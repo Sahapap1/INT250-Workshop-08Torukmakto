@@ -46,7 +46,7 @@ const prevStep = () => {
 </script>
 
 <template>
-    <main class="max-w-[1280px] mx-auto px-margin-desktop py-margin-desktop">
+    <main class="max-w-[1280px] mx-auto px-4 md:px-margin-desktop py-8 md:py-margin-desktop">
         <section>
             <div class="flex items-center justify-between max-w-4xl mx-auto relative">
                 <div class="absolute top-5 left-0 w-full h-0.5 bg-surface-container-highest -z-10"></div>
@@ -65,7 +65,7 @@ const prevStep = () => {
                     </div>
 
                     <span :class="[
-                        'font-label-md text-label-md transition-colors duration-300',
+                        'font-label-md text-center text-xs md:text-label-md transition-colors duration-300 mt-1',
                         currentStep >= index + 1 ? 'text-primary' : 'text-on-surface-variant'
                     ]">
                         {{ step }}

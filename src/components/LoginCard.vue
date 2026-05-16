@@ -1,11 +1,9 @@
 <template>
   <section class="w-full md:w-[440px]">
-    <div class="bg-white/95 backdrop-blur-sm p-8 md:p-10 rounded-xl shadow-2xl">
+    <div class="bg-surface-container-lowest/95 backdrop-blur-sm p-8 md:p-10 rounded-xl shadow-2xl border border-outline-variant/30">
       <div class="mb-8 text-center">
         <h2 class="font-headline-md text-primary">Secure Sign In</h2>
       </div>
-
-
 
       <!-- Form -->
       <form class="space-y-6" @submit.prevent="handleLogin">
@@ -18,7 +16,7 @@
           </span>
 
           <input v-model="form.username" type="text" placeholder="University ID" @input="errorMessage = ''" :class="[
-            'w-full pl-8 pr-4 py-3 border-b bg-transparent focus:ring-0 transition-all font-body-md placeholder:text-outline',
+            'w-full pl-8 pr-4 py-3 border-b bg-transparent text-on-surface focus:ring-0 transition-all font-body-md placeholder:text-outline',
             errorMessage
               ? 'border-error focus:border-error'
               : 'border-outline-variant focus:border-primary'
@@ -31,7 +29,7 @@
           </span>
 
           <input v-model="form.password" type="password" placeholder="Password" @input="errorMessage = ''" :class="[
-            'w-full pl-8 pr-4 py-3 border-b bg-transparent focus:ring-0 transition-all font-body-md placeholder:text-outline',
+            'w-full pl-8 pr-4 py-3 border-b bg-transparent text-on-surface focus:ring-0 transition-all font-body-md placeholder:text-outline',
             errorMessage
               ? 'border-error focus:border-error'
               : 'border-outline-variant focus:border-primary'
@@ -48,13 +46,13 @@
             </span>
           </label>
 
-          <a href="#" class="font-label-md text-primary-container text-sm font-semibold hover:underline">
+          <a href="#" class="font-label-md text-primary text-sm font-semibold hover:underline">
             Forgot?
           </a>
         </div>
 
         <button type="submit"
-          class="w-full bg-primary-container text-white py-4 rounded font-label-md hover:bg-primary transition-all shadow-lg active:scale-[0.99]">
+          class="w-full bg-primary text-on-primary py-4 rounded font-label-md hover:opacity-90 transition-all shadow-lg active:scale-[0.99]">
           Sign In
         </button>
       </form>

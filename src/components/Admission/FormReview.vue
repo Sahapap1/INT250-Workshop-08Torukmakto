@@ -12,7 +12,7 @@
     <div class="grid grid-cols-1 gap-8">
         <!-- Section: Personal Info -->
         <section
-            class="bg-surface-container-low rounded-xl p-8 border border-outline-variant relative overflow-hidden group">
+            class="bg-surface-container-low rounded-xl p-6 md:p-8 border border-outline-variant relative overflow-hidden group">
             <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
             <div class="flex justify-between items-start mb-6">
                 <div class="flex items-center gap-3">
@@ -48,7 +48,7 @@
         </section>
         <!-- Section: Academic Background -->
         <section
-            class="bg-surface-container-low rounded-xl p-8 border border-outline-variant relative overflow-hidden group">
+            class="bg-surface-container-low rounded-xl p-6 md:p-8 border border-outline-variant relative overflow-hidden group">
             <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
             <div class="flex justify-between items-start mb-6">
                 <div class="flex items-center gap-3">
@@ -82,7 +82,7 @@
         </section>
         <!-- Section: Documents -->
         <section
-            class="bg-surface-container-low rounded-xl p-8 border border-outline-variant relative overflow-hidden group">
+            class="bg-surface-container-low rounded-xl p-6 md:p-8 border border-outline-variant relative overflow-hidden group">
             <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
             <div class="flex justify-between items-start mb-6">
                 <div class="flex items-center gap-3">
@@ -149,7 +149,7 @@
         </section>
     </div>
     <!-- Final Declaration -->
-    <div class="mt-12 p-8 bg-surface-container rounded-xl border-2 border-primary-container/10">
+    <div class="mt-12 p-6 md:p-8 bg-surface-container rounded-xl border-2 border-primary-container/10">
         <h3 class="font-headline-md text-headline-md text-primary mb-4">Final Declaration</h3>
         <div class="flex gap-4">
             <div class="pt-1">

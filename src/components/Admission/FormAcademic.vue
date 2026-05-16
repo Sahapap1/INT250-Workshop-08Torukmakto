@@ -16,7 +16,7 @@ const selectStatus = (newStatus) => {
 </script>
 
 <template>
-    <section class="bg-surface-container-lowest p-10 mt-10 rounded-xl border border-outline-variant shadow-sm mb-10">
+    <section class="bg-surface-container-lowest p-6 md:p-10 mt-10 rounded-xl border border-outline-variant shadow-sm mb-10">
         <div class="flex items-center gap-3 mb-6">
             <span class="material-symbols-outlined text-primary text-2xl">person_search</span>
             <h2 class="font-headline-md text-headline-md text-primary">Identify Your Status</h2>
@@ -62,7 +62,7 @@ const selectStatus = (newStatus) => {
         </div>
     </section>
 
-    <section class="bg-surface-container-lowest p-10 rounded-xl border border-outline-variant shadow-sm space-y-10">
+    <section class="bg-surface-container-lowest p-6 md:p-10 rounded-xl border border-outline-variant shadow-sm space-y-10">
         <div class="flex items-center gap-3 mb-2">
             <span class="material-symbols-outlined text-primary text-2xl">menu_book</span>
             <h2 class="font-headline-md text-headline-md text-primary">Academic Background</h2>
@@ -96,7 +96,7 @@ const selectStatus = (newStatus) => {
                 </div>
             </div>
 
-            <div v-else-if="props.status === 'polytechnic'" class="p-8 border-2 border-dashed border-outline-variant rounded-xl bg-surface-container-low/50 space-y-6 animate-fade-in">
+            <div v-else-if="props.status === 'polytechnic'" class="p-6 md:p-8 border-2 border-dashed border-outline-variant rounded-xl bg-surface-container-low/50 space-y-6 animate-fade-in">
                 <div class="flex items-center gap-2 text-on-secondary-container">
                     <span class="material-symbols-outlined text-[20px]">info</span>
                     <h4 class="font-label-md text-label-md">Advanced Polytechnic Entry</h4>
@@ -104,7 +104,7 @@ const selectStatus = (newStatus) => {
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-4">
                         <label class="font-label-md text-label-md text-on-surface-variant block">Current Status</label>
-                        <div class="flex items-center gap-6">
+                        <div class="flex flex-wrap items-center gap-4 md:gap-6">
                             <label class="flex items-center gap-2 cursor-pointer group">
                                 <input class="w-5 h-5 text-primary border-outline focus:ring-primary-fixed"
                                     name="hbo-status" type="radio" />
@@ -132,7 +132,7 @@ const selectStatus = (newStatus) => {
                 </div>
             </div>
 
-            <div v-else-if="props.status === 'international'" class="p-8 bg-surface-container rounded-xl space-y-6 animate-fade-in">
+            <div v-else-if="props.status === 'international'" class="p-6 md:p-8 bg-surface-container rounded-xl space-y-6 animate-fade-in">
                 <div class="flex items-center gap-2 text-primary">
                     <span class="material-symbols-outlined text-[20px]">language</span>
                     <h4 class="font-label-md text-label-md">International Credentials</h4>
