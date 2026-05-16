@@ -14,8 +14,14 @@
 
       <!-- Desktop Actions -->
       <div class="hidden lg:flex items-center gap-4">
-        <button class="px-6 py-2 bg-primary-container text-on-primary-container font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Student Login</button>
-        <button class="px-6 py-2 bg-primary text-on-primary font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Apply Now</button>
+        <RouterLink to="/login"><button
+            class="px-6 py-2 bg-primary-container text-on-primary-container font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Student
+            Login</button></RouterLink>
+        <RouterLink to="/admissions">
+          <button
+            class="px-6 py-2 bg-primary text-on-primary font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Apply
+            Now</button>
+        </RouterLink>
         <button @click="toggleDarkMode" class="text-on-surface hover:text-primary transition-colors p-2 flex items-center justify-center rounded-full hover:bg-surface-variant" title="Toggle Dark Mode">
           <span class="material-symbols-outlined text-3xl">{{ isDark ? 'light_mode' : 'dark_mode' }}</span>
         </button>
@@ -44,8 +50,14 @@
         </button>
       </nav>
       <div class="flex flex-col gap-3 mt-4">
-        <button class="w-full py-3 bg-primary-container text-on-primary-container font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Student Login</button>
-        <button class="w-full py-3 bg-primary text-on-primary font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Apply Now</button>
+        <RouterLink to="/login"><button
+            class="px-6 py-2 bg-primary-container text-on-primary-container font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Student
+            Login</button></RouterLink>
+        <RouterLink to="/admissions">
+          <button
+            class="px-6 py-2 bg-primary text-on-primary font-label-md rounded-lg hover:opacity-90 transition-all active:scale-95">Apply
+            Now</button>
+        </RouterLink>
       </div>
     </div>
   </header>
