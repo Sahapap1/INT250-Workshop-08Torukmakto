@@ -13,13 +13,13 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8 shadow-sm transition-colors duration-300">
-    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+  <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+    <div class="flex justify-between items-center mb-8">
       <div>
-        <h2 class="text-2xl font-semibold text-primary">Academic Progress</h2>
-        <p class="text-sm text-on-surface-variant">Real-time performance across current modules.</p>
+        <h2 class="text-2xl font-semibold text-[#071A3B]">Academic Progress</h2>
+        <p class="text-sm text-gray-400">Real-time performance across current modules.</p>
       </div>
-      <button class="text-primary text-sm flex items-center gap-1 hover:underline">
+      <button class="text-[#071A3B] text-sm flex items-center gap-1 hover:underline">
         View Full Transcript
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -27,7 +27,7 @@ defineProps({
           viewBox="0 0 24 24" 
           stroke-width="1.8" 
           stroke="currentColor"
-          class="w-6 h-6 text-primary"
+          class="w-6 h-6 text-[#2A4386]"
           >
           <path 
               stroke-linecap="round" 
@@ -55,16 +55,16 @@ defineProps({
       <div
         v-for="course in courses"
         :key="course.code"
-        class="p-4 border border-outline-variant rounded-lg hover:border-primary transition-colors"
+        class="p-4 border border-gray-200 rounded-lg hover:border-indigo-500 transition-colors"
       >
         <div class="flex justify-between mb-2">
-          <span class="text-sm font-bold text-primary">{{ course.code }}: {{ course.name }}</span>
-          <span class="text-xs text-primary">Grade: {{ course.grade }} ({{ course.percent }}%)</span>
+          <span class="text-sm font-bold text-[#071A3B]">{{ course.code }}: {{ course.name }}</span>
+          <span class="text-xs text-[#071A3B]">Grade: {{ course.grade }} ({{ course.percent }}%)</span>
         </div>
-        <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-          <div class="bg-primary h-full rounded-full" :style="{ width: `${course.percent}%` }"></div>
+        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+          <div class="bg-[#071A3B] h-full rounded-full" :style="{ width: `${course.percent}%` }"></div>
         </div>
-        <div class="mt-2 flex justify-between text-[11px] text-on-surface-variant">
+        <div class="mt-2 flex justify-between text-[11px] text-gray-400">
           <span>Lecturer: {{ course.lecturer }}</span>
           <span>{{ course.credits }} Credits</span>
         </div>
@@ -72,14 +72,14 @@ defineProps({
     </div>
 
     <!-- Notice -->
-    <div v-if="notice" class="mt-10 p-6 bg-primary-container text-on-primary-container rounded-lg">
+    <div v-if="notice" class="mt-10 p-6 bg-[#071A3B] rounded-lg text-white">
       <div class="flex gap-4 items-start">
         <svg 
         xmlns="http://www.w3.org/2000/svg" 
         fill="none" 
         viewBox="0 0 24 24" 
         stroke-width="1.8" 
-        stroke="currentColor"
+        stroke="white"
         class="w-10 h-10"
         >
         <path 

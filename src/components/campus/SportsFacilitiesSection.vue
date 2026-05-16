@@ -1,8 +1,8 @@
 <script setup></script>
 <template>
   <section class="py-10 py-spacing-8 bg-surface-container-highest">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-margin-desktop">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-12">
+    <div class="max-w-[1280px] mx-auto px-margin-desktop">
+      <div class="flex justify-between items-end mb-12">
         <div>
           <h2 class="font-headline-lg text-headline-lg text-primary">
             Sports Facility Booking
@@ -12,13 +12,13 @@
           </p>
         </div>
         <button
-          class="bg-white px-6 py-2 rounded-full border border-outline text-primary font-label-md shadow-sm hover:shadow-md transition-all w-full md:w-auto"
+          class="bg-white px-6 py-2 rounded-full border border-outline text-primary font-label-md shadow-sm hover:shadow-md transition-all"
         >
           My Schedule
         </button>
       </div>
       <!-- Bento Grid Layout for Facilities -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-gutter">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
         <!-- Football Field -->
         <div
           class="md:col-span-8 bg-surface rounded-2xl overflow-hidden shadow-md flex flex-col md:flex-row border-l-4 border-secondary-fixed"
