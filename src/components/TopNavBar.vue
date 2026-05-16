@@ -34,4 +34,23 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
+const isMobileMenuOpen = ref(false);
+const isDark = ref(false);
+
+const toggleDarkMode = () => {
+  isDark.value = !isDark.value;
+  if (isDark.value) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+};
+
+onMounted(() => {
+  if (document.documentElement.classList.contains('dark')) {
+    isDark.value = true;
+  }
+});
 </script>

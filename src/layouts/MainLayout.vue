@@ -3,11 +3,13 @@ import TopNavBar from "@/components/TopNavBar.vue";
 import AppFooter from "@/components/AppFooter.vue";
 </script>
 <template>
-  <TopNavBar />
-  <main>
-    <RouterView />
-  </main>
-  <AppFooter />
+  <div class="overflow-x-hidden">
+    <TopNavBar />
+    <main>
+      <RouterView />
+    </main>
+    <AppFooter />
+  </div>
 </template>
 
 <style scoped></style>

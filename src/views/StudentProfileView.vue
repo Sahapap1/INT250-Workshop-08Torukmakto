@@ -114,7 +114,7 @@ function handleAddProject() {
 </script>
 
 <template>
-  <main class="max-w-[1280px] mx-auto px-8 py-12">
+  <main class="max-w-[1280px] mx-auto px-4 md:px-8 py-12">
 
     <!-- Profile Header -->
     <section class="mb-12">

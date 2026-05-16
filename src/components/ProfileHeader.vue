@@ -8,14 +8,14 @@ defineProps({
 </script>
 
 <template>
-  <div class="bg-white rounded-xl p-8 border border-gray-200 shadow-sm flex flex-col md:flex-row gap-8 items-center md:items-start">
+  <div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 border border-outline-variant shadow-sm flex flex-col md:flex-row gap-6 md:gap-8 items-center md:items-start transition-colors duration-300">
 
     <!-- Avatar -->
     <div class="relative shrink-0">
-      <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-indigo-100 shadow-md">
+      <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-primary-container shadow-md">
         <img :alt="`${student.name} profile photo`" class="w-full h-full object-cover" :src="student.avatar" />
       </div>
-      <button class="absolute bottom-2 right-2 bg-[#071A3B] text-white p-2 rounded-full shadow-lg hover:bg-indigo-700 transition-colors">
+      <button class="absolute bottom-2 right-2 bg-primary text-on-primary p-2 rounded-full shadow-lg hover:bg-primary/90 transition-colors">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
@@ -38,22 +38,22 @@ defineProps({
     <div class="flex-grow text-center md:text-left">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
         <div>
-          <span class="text-[#071A3B] text-xs font-medium bg-indigo-50 px-3 py-1 rounded-full mb-2 inline-block">
+          <span class="text-on-primary-container text-xs font-medium bg-primary-container px-3 py-1 rounded-full mb-2 inline-block">
             {{ student.level }}
           </span>
-          <h1 class="text-4xl font-bold text-[#00174A]">{{ student.name }}</h1>
-          <p class="text-xl font-medium text-gray-500">{{ student.faculty }}</p>
+          <h1 class="text-4xl font-bold text-primary">{{ student.name }}</h1>
+          <p class="text-xl font-medium text-on-surface-variant">{{ student.faculty }}</p>
         </div>
         <div class="flex flex-col gap-2 md:items-end">
-          <span class="text-gray-600 text-sm">STUDENT ID: {{ student.id }}</span>
+          <span class="text-on-surface-variant text-sm">STUDENT ID: {{ student.id }}</span>
           <div class="flex items-center gap-2">
             <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke-width="1.5" 
-            stroke="#0D2C6E"
-            class="w-6 h-6"
+            stroke="currentColor"
+            class="w-6 h-6 text-primary"
             >
             <path 
                 stroke-linecap="round" 
@@ -67,15 +67,15 @@ defineProps({
       </div>
 
       <!-- Stats -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-gray-200 pt-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 border-t border-outline-variant pt-6 mt-6 md:mt-0 transition-colors duration-300">
         <div class="flex items-center gap-3">
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
             viewBox="0 0 24 24" 
             stroke-width="1.5" 
-            stroke="#0D2C6E"
-            class="w-6 h-6"
+            stroke="currentColor"
+            class="w-6 h-6 text-primary"
         >
             <path 
                 stroke-linecap="round" 
@@ -84,8 +84,8 @@ defineProps({
             />
           </svg>
           <div>
-            <p class="text-gray-700 text-xs">Degree</p>
-            <p class="text-sm font-semibold">{{ student.degree }}</p>
+            <p class="text-on-surface-variant text-xs">Degree</p>
+            <p class="text-sm font-semibold text-on-surface">{{ student.degree }}</p>
           </div>
         </div>
         <div class="flex items-center gap-3 ">
@@ -94,8 +94,8 @@ defineProps({
             fill="none" 
             viewBox="0 0 24 24" 
             stroke-width="1.5" 
-            stroke="#0D2C6E"
-            class="w-6 h-6"
+            stroke="currentColor"
+            class="w-6 h-6 text-primary"
             >
             <path 
                 stroke-linecap="round" 
@@ -104,8 +104,8 @@ defineProps({
                 />
           </svg>
           <div>
-            <p class="text-gray-700 text-xs">Expected Graduation</p>
-            <p class="text-sm font-semibold">{{ student.graduation }}</p>
+            <p class="text-on-surface-variant text-xs">Expected Graduation</p>
+            <p class="text-sm font-semibold text-on-surface">{{ student.graduation }}</p>
           </div>
         </div>
         <div class="flex items-center gap-3">
@@ -114,8 +114,8 @@ defineProps({
           fill="none" 
           viewBox="0 0 24 24" 
           stroke-width="1.5" 
-          stroke="#0D2C6E"
-          class="w-6 h-6"
+          stroke="currentColor"
+          class="w-6 h-6 text-primary"
           >
           <path 
               stroke-linecap="round" 
@@ -129,8 +129,8 @@ defineProps({
           />
           </svg>
           <div>
-            <p class="text-gray-700 text-xs">Primary Campus</p>
-            <p class="text-sm font-semibold">{{ student.campus }}</p>
+            <p class="text-on-surface-variant text-xs">Primary Campus</p>
+            <p class="text-sm font-semibold text-on-surface">{{ student.campus }}</p>
           </div>
         </div>
       </div>
