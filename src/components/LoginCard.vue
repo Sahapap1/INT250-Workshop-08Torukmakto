@@ -5,95 +5,120 @@
         <h2 class="font-headline-md text-primary">Secure Sign In</h2>
       </div>
 
-      
+
 
       <!-- Form -->
-      <form class="space-y-6">
+      <form class="space-y-6" @submit.prevent="handleLogin">
         <div class="relative">
-          <span
-            class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline"
-          >
+          <p v-if="errorMessage" class="text-error text-sm font-medium">
+            {{ errorMessage }}
+          </p>
+          <span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline">
             account_circle
           </span>
 
-          <input
-            v-model="form.username"
-            type="text"
-            placeholder="University ID"
-            class="w-full pl-8 pr-4 py-3 border-b border-outline-variant bg-transparent focus:border-primary focus:ring-0 transition-all font-body-md placeholder:text-outline"
-          />
+          <input v-model="form.username" type="text" placeholder="University ID" @input="errorMessage = ''" :class="[
+            'w-full pl-8 pr-4 py-3 border-b bg-transparent focus:ring-0 transition-all font-body-md placeholder:text-outline',
+            errorMessage
+              ? 'border-error focus:border-error'
+              : 'border-outline-variant focus:border-primary'
+          ]" />
         </div>
 
         <div class="relative">
-          <span
-            class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline"
-          >
+          <span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-outline">
             lock
           </span>
 
-          <input
-            v-model="form.password"
-            type="password"
-            placeholder="Password"
-            class="w-full pl-8 pr-4 py-3 border-b border-outline-variant bg-transparent focus:border-primary focus:ring-0 transition-all font-body-md placeholder:text-outline"
-          />
+          <input v-model="form.password" type="password" placeholder="Password" @input="errorMessage = ''" :class="[
+            'w-full pl-8 pr-4 py-3 border-b bg-transparent focus:ring-0 transition-all font-body-md placeholder:text-outline',
+            errorMessage
+              ? 'border-error focus:border-error'
+              : 'border-outline-variant focus:border-primary'
+          ]" />
         </div>
 
         <div class="flex items-center justify-between">
           <label class="flex items-center gap-2 cursor-pointer">
-            <input
-              v-model="form.remember"
-              type="checkbox"
-              class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4"
-            />
+            <input v-model="form.remember" type="checkbox"
+              class="rounded border-outline-variant text-primary focus:ring-primary w-4 h-4" />
 
             <span class="font-label-md text-on-surface-variant text-sm">
               Remember me
             </span>
           </label>
 
-          <a
-            href="#"
-            class="font-label-md text-primary-container text-sm font-semibold hover:underline"
-          >
+          <a href="#" class="font-label-md text-primary-container text-sm font-semibold hover:underline">
             Forgot?
           </a>
         </div>
 
-        <button
-          type="submit"
-          class="w-full bg-primary-container text-white py-4 rounded font-label-md hover:bg-primary transition-all shadow-lg active:scale-[0.99]"
-        >
+        <button type="submit"
+          class="w-full bg-primary-container text-white py-4 rounded font-label-md hover:bg-primary transition-all shadow-lg active:scale-[0.99]">
           Sign In
         </button>
       </form>
 
       <div class="mt-10 text-center">
-        <a
-          href="#"
-          class="inline-flex items-center gap-2 font-label-md text-primary hover:opacity-80 transition-opacity"
-        >
+        <RouterLink to="/admissions"
+          class="inline-flex items-center gap-2 font-label-md text-primary hover:opacity-80 transition-opacity">
           Need access?
 
           <span class="material-symbols-outlined text-[18px]">
             arrow_forward
           </span>
-        </a>
+        </RouterLink>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
+
+import { useRouter } from "vue-router";
+
+import { authStore } from "@/stores/appStore";
+
+const router = useRouter();
 
 const activeTab = ref('student')
+const errorMessage = ref("");
 
 const form = reactive({
   username: '',
   password: '',
   remember: false
 })
+
+
+
+const handleLogin = () => {
+  errorMessage.value = "";
+
+  const result = authStore.login(
+    form.username,
+    form.password,
+    form.remember
+  );
+
+  if (!result.success) {
+    errorMessage.value = result.message;
+    return;
+  }
+
+  router.push("/");
+};
+
+onMounted(() => {
+  const rememberedId =
+    authStore.getRememberedUniversityId();
+
+  if (rememberedId) {
+    form.username = rememberedId;
+    form.remember = true;
+  }
+});
 </script>
 
 <style scoped>
