@@ -5,6 +5,7 @@ import HomeView from "@/views/HomeView.vue";
 import AdmissionsView from "@/views/AdmissionsView.vue";
 import ProjectWorkspaceView from "@/views/ProjectWorkspaceView.vue";
 import CampusServicesView from "@/views/CampusServicesView.vue";
+import StudentProfileView from "@/views/StudentProfileView.vue";
 
 const routes = [
   {
@@ -27,6 +28,10 @@ const routes = [
       {
         path: "campus-services",
         component: CampusServicesView
+      },
+      {
+        path: "student-profile",
+        component: StudentProfileView
       }
     ],
   },
