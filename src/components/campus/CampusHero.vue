@@ -13,7 +13,7 @@
       ></div>
     </div>
     <div
-      class="relative z-10 max-w-[1280px] mx-auto px-margin-desktop w-full text-on-primary"
+      class="relative z-10 max-w-[1280px] mx-auto px-4 md:px-margin-desktop w-full text-on-primary"
     >
       <h1 class="font-display-lg text-display-lg mb-4">Campus Services</h1>
       <p class="font-body-lg text-body-lg mb-8 max-w-xl opacity-90">
