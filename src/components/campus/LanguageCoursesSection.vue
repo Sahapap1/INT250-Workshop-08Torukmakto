@@ -45,9 +45,9 @@ const courses = [
 </script>
 
 <template>
-  <section class="py-spacing-8 py-10 max-w-[1280px] mx-auto px-margin-desktop">
+  <section class="py-spacing-8 py-10 max-w-[1280px] mx-auto px-4 md:px-margin-desktop">
 
-    <div class="flex justify-between items-end mb-12">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-12">
 
       <div>
         <h2 class="font-headline-lg text-headline-lg text-primary">
@@ -71,7 +71,7 @@ const courses = [
 
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-gutter">
 
       <CourseCard
         v-for="course in courses"

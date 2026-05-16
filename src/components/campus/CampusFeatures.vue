@@ -4,7 +4,7 @@
     class="py-16 bg-surface-container-low border-b border-outline-variant"
   >
     <div
-      class="max-w-[1280px] mx-auto px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-8"
+      class="max-w-[1280px] mx-auto px-4 md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-8"
     >
       <div class="flex items-center gap-4">
         <div
