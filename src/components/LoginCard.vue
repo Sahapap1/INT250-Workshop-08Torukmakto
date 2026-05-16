@@ -5,24 +5,7 @@
         <h2 class="font-headline-md text-primary">Secure Sign In</h2>
       </div>
 
-      <!-- Tabs -->
-      <div class="flex border-b border-outline-variant mb-8 relative">
-        <button
-          class="flex-1 pb-3 text-center font-label-md relative"
-          :class="activeTab === 'student' ? 'tab-active' : 'text-outline hover:text-primary'"
-          @click="activeTab = 'student'"
-        >
-          Student
-        </button>
-
-        <button
-          class="flex-1 pb-3 text-center font-label-md relative"
-          :class="activeTab === 'staff' ? 'tab-active' : 'text-outline hover:text-primary'"
-          @click="activeTab = 'staff'"
-        >
-          Faculty & Staff
-        </button>
-      </div>
+      
 
       <!-- Form -->
       <form class="space-y-6">
