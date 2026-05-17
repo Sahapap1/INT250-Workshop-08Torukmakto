@@ -1,11 +1,11 @@
 <script setup>
-import FormDocuments_Inter from '../components/Admission/FormDocuments_Inter.vue';
-import FormDocuments_Polytechnic from '../components/Admission/FormDocuments_Polytechnic.vue';
-import FormDocuments_Standard from '../components/Admission/FormDocuments_Standard.vue';
-import ApplicationHeader from '../components/Admission/ApplicationHeader.vue';
-import FormPersenal from '../components/Admission/FormPersenal.vue';
-import FormAcademic from '../components/Admission/FormAcademic.vue';
-import FormReview from '../components/Admission/FormReview.vue';
+import FormDocuments_Inter from '../components/admission/FormDocuments_Inter.vue';
+import FormDocuments_Polytechnic from '../components/admission/FormDocuments_Polytechnic.vue';
+import FormDocuments_Standard from '../components/admission/FormDocuments_Standard.vue';
+import ApplicationHeader from '../components/admission/ApplicationHeader.vue';
+import FormPersenal from '../components/admission/FormPersenal.vue';
+import FormAcademic from '../components/admission/FormAcademic.vue';
+import FormReview from '../components/admission/FormReview.vue';
 
 import { ref, computed } from 'vue';
 
