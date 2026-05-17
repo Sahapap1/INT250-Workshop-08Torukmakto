@@ -1,3 +1,4 @@
+<!-- Form Documents (Standard) -->
 <script setup>
 import { admissionStore as store } from '@/stores/admissionStore';
 
