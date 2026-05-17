@@ -1,4 +1,15 @@
-<script setup></script>
+<script setup>
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
+</script>
 <template>
   <section class="relative w-full h-[600px] flex items-center overflow-hidden">
     <div class="absolute inset-0 z-0">
@@ -22,13 +33,13 @@
         courses at West Holland.
       </p>
       <div class="flex flex-wrap gap-4">
-        <button
+        <button @click="scrollToSection('language-courses')"
           class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-lg font-label-md hover:bg-secondary-container transition-all flex items-center gap-2"
         >
           <span class="material-symbols-outlined">language</span> Register
           Language Courses
         </button>
-        <button
+        <button @click="scrollToSection('sports-facilities')"
           class="bg-white/10 backdrop-blur-md border border-white/20 text-on-primary px-8 py-3 rounded-lg font-label-md hover:bg-white/20 transition-all flex items-center gap-2"
         >
           <span class="material-symbols-outlined">fitness_center</span> Book
