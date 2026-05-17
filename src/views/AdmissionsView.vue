@@ -92,7 +92,7 @@ const goToStep = (step) => {
                     <FormDocuments_Inter v-else-if="applicantStatus === 'international'" />
                 </template>
 
-                <FormReview v-else-if="currentStep === 4" @goToStep="goToStep" />
+                <FormReview v-else-if="currentStep === 4" :status="applicantStatus" @goToStep="goToStep" />
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-outline-variant mt-10">
