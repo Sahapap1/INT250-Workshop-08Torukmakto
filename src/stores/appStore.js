@@ -1,7 +1,7 @@
 import { reactive } from "vue";
 
 export const authStore = reactive({
-    user: JSON.parse(localStorage.getItem("user")) || null,
+    user: JSON.parse(sessionStorage.getItem("user")) || null,
 
     login(universityId, password, remember) {
         // mock user
@@ -33,16 +33,16 @@ export const authStore = reactive({
         // save current user
         this.user = userData;
 
-        localStorage.setItem("user", JSON.stringify(userData));
+        sessionStorage.setItem("user", JSON.stringify(userData));
 
         // remember me
         if (remember) {
-            localStorage.setItem(
+            sessionStorage.setItem(
                 "rememberedUniversityId",
                 universityId
             );
         } else {
-            localStorage.removeItem("rememberedUniversityId");
+            sessionStorage.removeItem("rememberedUniversityId");
         }
 
         return {
@@ -53,11 +53,11 @@ export const authStore = reactive({
     logout() {
         this.user = null;
 
-        localStorage.removeItem("user");
+        sessionStorage.removeItem("user");
     },
 
     getRememberedUniversityId() {
-        return localStorage.getItem("rememberedUniversityId") || "";
+        return sessionStorage.getItem("rememberedUniversityId") || "";
     },
 
     isAuthenticated() {
