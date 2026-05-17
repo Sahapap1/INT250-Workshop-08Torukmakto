@@ -6,11 +6,15 @@ import ResearchProjects from '@/components/ResearchProjects.vue'
 
 // ── Data ────────────────────────────────────────────────
 
+const user = JSON.parse(sessionStorage.getItem('user'))
+
+
+
 const student = {
-  name: 'Jonathan Doe',
+  name: user.name,
   level: 'Undergraduate',
   faculty: 'Faculty of Innovation',
-  id: '2024-UWH-8842',
+  id: user.universityId,
   email: 'j.doe@westholland.edu',
   degree: 'B.Sc. Cyber-Physical Systems',
   graduation: 'June 2026',
