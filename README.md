@@ -4,16 +4,37 @@
 
 ---
 
-## 🚀 Features
+## 🚀 Key Systems & Features
 
-- 🏫 **University Landing Page:** นำเสนอข้อมูลภาพรวม สถิติความสำเร็จ (Stats Counter) และหลักสูตรที่โดดเด่น (Programs Grid)
-- 🔐 **Secure Authentication:** ระบบหน้าต่างเข้าสู่ระบบ (Login Card) สำหรับนักศึกษาเพื่อเข้าใช้งาน Portal
-- 📊 **Student Dashboard:** แดชบอร์ดจัดการข้อมูลส่วนตัว ประกอบด้วย:
-  - **Academic Progress:** ติดตามความคืบหน้าการเรียนและเกรดแบบเรียลไทม์
-  - **Journey Tracker:** แสดงเส้นทางการศึกษาและสถานะปัจจุบัน
-  - **Research Projects:** จัดการและติดตามความคืบหน้าของโครงงานวิจัย
-- 🐧 **Bright Penguin Theme:** ระบบธีมสว่างที่ออกแบบมาเป็นพิเศษเพื่อให้ความรู้สึกสะอาดตา อ่านง่าย และมีเอกลักษณ์เฉพาะตัว (Custom Aesthetic) แทนที่การใช้ Dark Mode แบบเดิมๆ
-- 📱 **Fully Responsive:** จัดการ Layout ด้วย Grid และ Flexbox เพื่อให้รองรับการแสดงผลทุกขนาดหน้าจอ
+### 1. 🏫 Institution Home & Analytics
+- **Heritage & Innovation Identity:** การจัด Visual Hierarchy บนหน้าแรกเพื่อสื่อสารถึงอัตลักษณ์ของมหาวิทยาลัยอย่างชัดเจน
+- **Academic Programs Grid:** แนะนำหลักสูตรและคณะยอดนิยม (Medicine, Law, Industrial Engineering) ในลักษณะ Bento Grid ผสมผสาน Responsive Card Layout
+- **Institutional Stats Counter:** แผงแสดงข้อมูลและสถิติความสำเร็จของสถาบัน (เช่น ปีที่ก่อตั้ง 1642, จำนวนนักศึกษา 12k+, อัตราการจ้างงาน 95%)
+
+### 2. 📝 Dynamic Admissions System (Multi-step Form)
+ระบบรับสมัครนักศึกษาเข้าศึกษาต่อในระดับปริญญาตรี (Undergraduate Application) ผ่านฟอร์มแบบมีขั้นตอน (Multi-step) ควบคุมข้อมูลผ่าน Centralized State:
+- **Smart Identity Profiling:** แผงกรอกข้อมูลพื้นฐานทางการศึกษาที่ปรับฟิลด์ตาม "สถานะผู้สมัคร" (Applicant Track) 3 รูปแบบโดยอัตโนมัติ:
+  - **Regular Student:** นักเรียนดัตช์ทั่วไป (กรอกรหัส BSN Number และเลือกแผนการเรียน VWO Profile)
+  - **Polytechnic (HBO):** นักศึกษาโอนย้ายจากสายอาชีพ (เลือกสถานะ Propedeuse / Full Diploma และเก็บข้อมูล GPA สะสม)
+  - **International Applicants:** นักศึกษาต่างชาติ (เลือกประเทศต้นทาง และกรอกระดับคะแนนภาษาอังกฤษ IELTS / TOEFL)
+- **Conditional Document Upload:** การจัดกลุ่มอัปโหลดเอกสารหลักฐานแยกตามคุณสมบัติแทร็ก (เช่น แทร็กนานาชาติจะแสดงรายการให้ส่ง Passport Copy) พร้อมระบบแสดงสถานะ `✓ File uploaded` และ Checkbox แจ้งการตรวจสอบความถูกต้องแบบเรียลไทม์
+- **Summary & Legal Review:** หน้าต่างตรวจสอบข้อมูลสรุปทุกส่วน (Personal, Academic, Documents) ก่อนการส่งจริง พร้อมระบบ Declaration ให้กดยอมรับเงื่อนไขทางกฎหมาย และระบบ Save Progress ลงระบบ Local Storage
+
+### 3. 🚴 Campus Services & Sports Facilities Booking
+- **Language Course Registration:** ส่วนจำลองการลงทะเบียนเรียนคอร์สภาษาระดับสากล (เช่น Academic Writing, Japanese/Chinese Basics) พร้อมแถบประเมินที่นั่งคงเหลือ (Seats Available)
+- **High-Fidelity Sports Booking:** ระบบแดชบอร์ดจองพื้นที่สนามและศูนย์กีฬาประจำวิทยาเขต แสดงผล Capacity ข้อมูลแบบทันท่วงที:
+  - *Football Field:* สนามหญ้าเทียมเกรดมาตรฐานโปร รองรับการคำนวณผู้เล่นแมตช์ 11v11
+  - *Fitness Center / Basketball Court:* บันทึกการเข้าใช้งาน (Check-in) และระบุสถานะจำกัดโควตา (Limited Slots)
+  - *Swimming Pool:* ระบบจองลู่วิ่งในสระว่ายน้ำโอลิมปิก พร้อม Dynamic Badge บอกอุณหภูมิของน้ำ (26°C)
+
+### 4. 📊 Student Portal & Project Workspace
+- **Academic Progress Tracker:** ตารางติดตามคะแนนวิชาเรียน เกรดเฉลี่ยรายโมดูล และแสดงผลลัพธ์ผ่านแถบเปอร์เซ็นต์แบบไดนามิก (`:style="{ width: course.percent }"`)
+- **Journey Timeline Tracker:** เครื่องมือแสดงเส้นทางการเรียนจำลอง ตั้งแต่ขั้น Admission, Enrollment ไปจนถึงวันจบการศึกษา โดยคำนวณเส้นประและเฉดสีตามสถานะอดีตและปัจจุบันอัตโนมัติ (Done, Active, Pending)
+- **Project Workspace & Thesis Monitoring:** พื้นที่ทำงานส่วนกลางสำหรับติดตามโปรเจกต์วิจัยและวิทยานิพนธ์ แสดงรายชื่อผู้ทำงานด้วยภาพ Avatar/Initials และประเมินสถานะความคืบหน้าของ Milestone (Proposal, Collection, Draft Review, Final Defense) ร่วมกับอาจารย์ที่ปรึกษา
+
+### 5. 🐧 "Bright Penguin" System Theme Design
+- **Tailwind Design Tokens:** หลีกเลี่ยงการใช้ Arbitrary values เกินความจำเป็น โดยหันมาควบคุมโทนสีและขนาดผ่าน Semantic Tokens (เช่น `bg-surface-container-lowest`, `text-primary`, `border-outline-variant`)
+- **Theme UI Experience:** นำเสนอแนวคิดธีมสว่างสไตล์เฉพาะตัวที่มีความนุ่มนวล สะอาดตา และเพิ่มความคมชัดในการอ่านข้อมูลการเรียนจำนวนมากเป็นเวลานาน (Aesthetic & Readability Focus)
 
 ---
 
